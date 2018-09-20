@@ -11,7 +11,7 @@ class Result extends Component {
         return (
             <div>
                 <h2>Sentiment analysis for: {data.query}</h2>
-                <Chart data={this.props.data} />
+                <Chart data={data} key={data._id} />
                 <h3>The overal sentiment about your query is {data.sentiment}.</h3>
                 <div className="search-result">
                     {data.searchType === 'popular' ? (

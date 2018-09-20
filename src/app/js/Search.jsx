@@ -76,7 +76,7 @@ class Search extends React.Component {
     }
 
     _handleSubmit(event) {
-        alert('submitted' + this.state.value);
+        alert('submitted: ' + this.state.value);
         event.preventDefault();
 
         api.post('/api/search', { query: this.state.value, searchType: this.state.searchType })

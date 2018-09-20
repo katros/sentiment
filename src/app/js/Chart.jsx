@@ -4,6 +4,7 @@ import { Doughnut } from 'react-chartjs-2';
 class Chart extends Component {
     constructor(props) {
         super(props);
+        console.log('shit');
         this.state = {
             chartData: {
                 datasets: [
@@ -15,7 +16,7 @@ class Chart extends Component {
                             this.props.data.mixedTweets
                         ],
 
-                        backgroundColor: ['#87A0C4', '#E0B94E', '#DE7B50', '#6B486B'],
+                        backgroundColor: ['#ff9000', '#cd185b', '#4bb5ab', '#e7e8ea'],
                         borderColor: ['#000', '#000', '#000', '#000']
                     }
                 ],
@@ -24,6 +25,7 @@ class Chart extends Component {
         };
     }
     render() {
+        console.log(this.state.chartData);
         return (
             <div className="chart">
                 <Doughnut
