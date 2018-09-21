@@ -1,6 +1,6 @@
 import React from 'react';
 import api from './utils/api';
-import Result from './Result.jsx';
+import Result from './Result';
 
 class Search extends React.Component {
     constructor(props) {
@@ -76,7 +76,6 @@ class Search extends React.Component {
     }
 
     _handleSubmit(event) {
-        alert('submitted: ' + this.state.value);
         event.preventDefault();
 
         api.post('/api/search', { query: this.state.value, searchType: this.state.searchType })

@@ -107,9 +107,11 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     const userId = req.user._id;
 
-    Search.find({ userId }).then(result => {
-        res.send(result);
-    });
+    Search.find({ userId })
+        .sort([['updated_at', -1]])
+        .then(result => {
+            res.send(result);
+        });
 });
 
 //deleting specific search result

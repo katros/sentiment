@@ -20,7 +20,7 @@ const Navigation = props => {
                                 search
                             </Link>
                             &nbsp; &nbsp; &nbsp;
-                            <Link className="link nav-link" to="/search">
+                            <Link className="link nav-link" to="/how-does-it-work">
                                 how does it work?
                             </Link>
                         </span>
@@ -35,7 +35,7 @@ const Navigation = props => {
                         </span>
                     ) : (
                         <span>
-                            <Link className="link nav-link" to="/">
+                            <Link className="link nav-link" to="/about">
                                 what is it about?
                             </Link>
                             &nbsp; &nbsp; &nbsp;

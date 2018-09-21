@@ -1,11 +1,11 @@
 // import api from './utils/api';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Chart from './Chart.jsx';
+import Chart from './Chart';
 
 class Result extends Component {
     render() {
-        console.log(this.props.data);
+        // console.log(this.props.data);
         const data = this.props.data;
         if (!data) return null;
         return (

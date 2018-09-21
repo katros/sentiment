@@ -4,7 +4,6 @@ import { Doughnut } from 'react-chartjs-2';
 class Chart extends Component {
     constructor(props) {
         super(props);
-        console.log('shit');
         this.state = {
             chartData: {
                 datasets: [
@@ -25,7 +24,6 @@ class Chart extends Component {
         };
     }
     render() {
-        console.log(this.state.chartData);
         return (
             <div className="chart">
                 <Doughnut

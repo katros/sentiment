@@ -9,6 +9,8 @@ import Navigation from './Navigation';
 import Profile from './Profile';
 import NotFound from './NotFound';
 import Search from './Search';
+import Instruction from './Instruction';
+import About from './About';
 import api from './utils/api';
 
 class Application extends React.Component {
@@ -39,7 +41,13 @@ class Application extends React.Component {
                             path="/auth"
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}
                         />
-                        <Route exact path="/search" render={() => <Search />} />
+                        <Route exact path="/search" render={() => <Search user={this.state.user} />} />
+                        <Route
+                            exact
+                            path="/how-does-it-work"
+                            render={() => <Instruction user={this.state.user} />}
+                        />
+                        <Route exact path="/about" render={() => <About />} />
                         <Route component={NotFound} />
                     </Switch>
                 </div>
