@@ -127,8 +127,8 @@ router.post('/:id/delete', (req, res) => {
 router.get('/tweets/:searchId', (req, res) => {
     const searchId = req.params.searchId;
 
-    Tweets.find({ searchId }).then(result => {
-        res.send(result);
+    Tweets.findOne({ searchId }).then(result => {
+        res.send(result.tweets);
     });
 });
 

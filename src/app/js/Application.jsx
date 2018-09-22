@@ -11,6 +11,7 @@ import NotFound from './NotFound';
 import Search from './Search';
 import Instruction from './Instruction';
 import About from './About';
+import TweetSentiment from './TweetSentiment';
 import api from './utils/api';
 
 class Application extends React.Component {
@@ -37,6 +38,13 @@ class Application extends React.Component {
                     <Switch>
                         <Route exact path="/" render={() => <Home user={this.state.user} />} />
                         <Route exact path="/profile" render={() => <Profile user={this.state.user} />} />
+                        <Route
+                            exact
+                            path="/tweets/:id"
+                            render={({ match }) => (
+                                <TweetSentiment user={this.state.user} id={match.params.id} />
+                            )}
+                        />
                         <Route
                             path="/auth"
                             render={() => <Auth setUser={this._setUser} resetUser={this._resetUser} />}

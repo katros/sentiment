@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import api from './utils/api';
-import Card from './Card';
+import Tweet from './Tweet';
 
-class Details extends Component {
+class TweetSentiment extends Component {
     constructor(props) {
         super(props);
         this.state = {
             error: null,
             isLoaded: false,
-            searchResults: []
+            tweets: []
         };
     }
 
     componentDidMount() {
-        api.get('/api/search').then(
+        api.get('/api/search/tweets/' + this.props.id).then(
             result => {
+                console.log('result=', result);
                 this.setState({
                     isLoaded: true,
-                    searchResults: result
+                    tweets: result
                 });
             },
             error => {
@@ -30,12 +31,15 @@ class Details extends Component {
     }
 
     render() {
-        console.log(this.state.searchResults);
+        const mappedSentiment = this.state.tweets.map(el => <Tweet tweetDetails={el} key={el._id} />);
 
-        const mappedTweet = this.state.searchResults.map(el => <Card tweet={el} key={el._id} />);
-
-        return <div>{mappedTweet}</div>;
+        return (
+            <div>
+                <p>HELLO!!!</p>
+                <div>{mappedSentiment}</div>
+            </div>
+        );
     }
 }
 
-export default Details;
+export default TweetSentiment;

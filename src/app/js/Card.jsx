@@ -1,5 +1,6 @@
 import React from 'react';
 import Moment from 'react-moment';
+import { Link } from 'react-router-dom';
 
 const Card = ({ tweet }) => {
     return (
@@ -15,7 +16,7 @@ const Card = ({ tweet }) => {
             <p>
                 date: <Moment format="DD/MM/YYYY, HH:mm">{tweet.created_at}</Moment>
             </p>
-            <button>details</button>
+            <Link to={'/tweets/' + tweet._id}>details</Link>
             <button>delete</button>
         </div>
     );

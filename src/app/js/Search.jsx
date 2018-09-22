@@ -18,16 +18,21 @@ class Search extends React.Component {
     }
 
     render() {
+        const { value } = this.state;
         return (
             <div className="container">
                 <h1>Search</h1>
                 <form onSubmit={this._handleSubmit}>
-                    <input
-                        type="text"
-                        onChange={evt => this._handleInputChange('value', evt.target.value)}
-                        className="input"
-                        placeholder="Search"
-                    />
+                    <div className="input-wrapper">
+                        <input
+                            type="text"
+                            onChange={evt => this._handleInputChange('value', evt.target.value)}
+                            className="searchInput"
+                            placeholder="Search"
+                            value={value}
+                        />
+                        <span className="input-highlight">{value.replace(/ /g, '\u00a0')}</span>
+                    </div>
                     <div>
                         Search type:
                         <br />

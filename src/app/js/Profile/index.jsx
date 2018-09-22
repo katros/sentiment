@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import Details from '../Details.jsx';
+import Details from '../Details';
 
 class Profile extends Component {
     render() {
