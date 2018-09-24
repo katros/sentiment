@@ -116,7 +116,7 @@ router.get('/', (req, res) => {
 
 //deleting specific search result
 
-router.post('/:id/delete', (req, res) => {
+router.delete('/:id', (req, res) => {
     Search.findByIdAndRemove(req.params.id).then(result => {
         res.send(result);
     });

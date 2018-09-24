@@ -13,6 +13,18 @@ class Details extends Component {
     }
 
     componentDidMount() {
+        this._getAllCards();
+    }
+
+    render() {
+        const mappedTweet = this.state.searchResults.map(el => (
+            <Card tweet={el} key={el._id} getAllCards={this._getAllCards} />
+        ));
+
+        return <div>{mappedTweet}</div>;
+    }
+
+    _getAllCards = () => {
         api.get('/api/search').then(
             result => {
                 this.setState({
@@ -27,15 +39,7 @@ class Details extends Component {
                 });
             }
         );
-    }
-
-    render() {
-        console.log(this.state.searchResults);
-
-        const mappedTweet = this.state.searchResults.map(el => <Card tweet={el} key={el._id} />);
-
-        return <div>{mappedTweet}</div>;
-    }
+    };
 }
 
 export default Details;
