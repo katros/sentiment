@@ -6,8 +6,8 @@ const Navigation = props => {
         <div className="navigation">
             <div className="container nav-content">
                 <div>
-                    <Link className="link nav-link" to="/">
-                        logo/home
+                    <Link className="link nav-link logo" to="/search">
+                        sentiment
                     </Link>
                     {props.user && (
                         <span>

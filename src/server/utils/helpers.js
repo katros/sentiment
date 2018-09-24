@@ -28,7 +28,8 @@ function getTweets(params) {
                 return (tweet.retweeted_status ? tweet.retweeted_status.full_text : tweet.full_text)
                     .replace(/\n/g, ' ')
                     .replace(/  +/g, ' ')
-                    .replace(/'/g, '');
+                    .replace(/'/g, '')
+                    .replace(/&amp;/g, '&');
             });
 
             resolve(tweetsText);

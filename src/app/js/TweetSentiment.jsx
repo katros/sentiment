@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from './utils/api';
 import Tweet from './Tweet';
+import { Link } from 'react-router-dom';
 
 class TweetSentiment extends Component {
     constructor(props) {
@@ -36,6 +37,8 @@ class TweetSentiment extends Component {
         return (
             <div>
                 <p>HELLO!!!</p>
+                <Link to={'/search'}>SEARCH AGAIN</Link>
+                <Link to={'/profile'}>GO BACK</Link>
                 <div>{mappedSentiment}</div>
             </div>
         );

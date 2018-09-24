@@ -1,10 +1,12 @@
-$primary-color: #63adf2;
+$primary-color: #000;
 $secondary-color: #ff686b;
 $text-color: #fff;
 $grey: rgb(200, 200, 200);
+$yellow: #fbc91b;
 
 @import './base.scss';
 @import './components.scss';
 @import './navigation.scss';
 @import './result.scss';
 @import './search.scss';
+@import './radio.scss';

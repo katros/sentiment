@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import Details from '../Details';
+import { Link } from 'react-router-dom';
 
 class Profile extends Component {
     render() {
@@ -11,6 +12,7 @@ class Profile extends Component {
                 {this.props.user._id}
                 <br />
                 {this.props.user.email}
+                <Link to={'/search'}>SERCH AGAIN</Link>
                 <Details />
             </div>
         );

@@ -5,11 +5,10 @@ import Chart from './Chart';
 
 class Result extends Component {
     render() {
-        // console.log(this.props.data);
         const data = this.props.data;
         if (!data) return null;
         return (
-            <div>
+            <div className="result-container">
                 <h2>Sentiment analysis for: {data.query}</h2>
                 <Chart data={data} key={data._id} />
                 <h3>The overal sentiment about your query is {data.sentiment}.</h3>
@@ -45,10 +44,10 @@ class Result extends Component {
                     )}
                     <p>% of tweets were classified as mixed.</p>
                 </div>
-                <p>
+                <h4>
                     If you want to know more details about this search, check your
                     <Link to="/profile"> profile</Link>.
-                </p>
+                </h4>
             </div>
         );
     }
