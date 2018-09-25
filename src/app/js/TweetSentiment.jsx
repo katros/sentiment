@@ -35,9 +35,7 @@ class TweetSentiment extends Component {
         const mappedSentiment = this.state.tweets.map(el => <Tweet tweetDetails={el} key={el._id} />);
 
         return (
-            <div>
-                <p>HELLO!!!</p>
-                <Link to={'/search'}>SEARCH AGAIN</Link>
+            <div className="container">
                 <Link to={'/profile'}>GO BACK</Link>
                 <div>{mappedSentiment}</div>
             </div>

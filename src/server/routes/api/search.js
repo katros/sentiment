@@ -118,9 +118,11 @@ router.get('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
     Search.findByIdAndRemove(req.params.id).then(result => {
-        res.send(result);
+        Tweets.deleteOne({ searchId: req.params.id }).then(result => {
+            console.log(result);
+            res.send(result);
+        });
     });
-    // Tweets.deleteOne({ searchId: req.params.id });
 });
 
 //getting detailed search information

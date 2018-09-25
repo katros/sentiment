@@ -1,7 +1,7 @@
 // import api from './utils/api';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Chart from './Chart';
+import DoughnutChart from './DoughnutChart';
 
 class Result extends Component {
     render() {
@@ -10,7 +10,7 @@ class Result extends Component {
         return (
             <div className="result-container">
                 <h2>Sentiment analysis for: {data.query}</h2>
-                <Chart data={data} key={data._id} />
+                <DoughnutChart data={data} key={data._id} />
                 <h3>The overal sentiment about your query is {data.sentiment}.</h3>
                 <div className="search-result">
                     {data.searchType === 'popular' ? (

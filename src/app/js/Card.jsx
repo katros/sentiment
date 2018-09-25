@@ -20,45 +20,45 @@ class Card extends Component {
         console.log(data);
         return (
             <div className="card">
-                <p>query: {data.query}</p>
-                <p>search type: {data.searchType}</p>
-                <p>sentiment: {data.sentiment}</p>
-                <p>details: </p>
+                <p className="txt-bolder"> query: </p>
+                {data.query}
+                <p className="txt-bolder">search type: </p>
+                {data.searchType}
+                <p className="txt-bolder">sentiment: </p>
+                {data.sentiment}
+                <p className="txt-bolder">details: </p>
 
                 {data.searchType === 'popular' ? (
-                    <p>{Math.round((data.positiveTweets * 100) / 15)}</p>
+                    <p>{Math.round((data.positiveTweets * 100) / 15)}% positive,</p>
                 ) : (
-                    <p>{data.positiveTweets * 4}</p>
+                    <p>{data.positiveTweets * 4}% positive,</p>
                 )}
-                <p>% positive,</p>
 
                 {data.searchType === 'popular' ? (
-                    <p>{Math.round((data.negativeTweets * 100) / 15)}</p>
+                    <p>{Math.round((data.negativeTweets * 100) / 15)}% negative,</p>
                 ) : (
-                    <p>{data.negativeTweets * 4}</p>
+                    <p>{data.negativeTweets * 4}% negative,</p>
                 )}
-                <p>% negative,</p>
 
                 {data.searchType === 'popular' ? (
-                    <p>{Math.round((data.neutralTweets * 100) / 15)}</p>
+                    <p>{Math.round((data.neutralTweets * 100) / 15)}% neutral,</p>
                 ) : (
-                    <p>{data.neutralTweets * 4}</p>
+                    <p>{data.neutralTweets * 4}% neutral,</p>
                 )}
-                <p>% neutral,</p>
 
                 {data.searchType === 'popular' ? (
-                    <p>{Math.round((data.mixedTweets * 100) / 15)}</p>
+                    <p>{Math.round((data.mixedTweets * 100) / 15)}% mixed</p>
                 ) : (
-                    <p>{data.mixedTweets * 4}</p>
+                    <p>{data.mixedTweets * 4}% mixed</p>
                 )}
-                <p>% mixed</p>
 
-                <p>
-                    date: <Moment format="DD/MM/YYYY, HH:mm">{data.created_at}</Moment>
-                </p>
-                <Link to={'/tweets/' + data._id}>details</Link>
-                <form onSubmit={this._handleSubmit}>
-                    <input type="submit" value="Delete" />
+                <p className="txt-bolder">date:</p>
+                <Moment format="DD/MM/YYYY, HH:mm">{data.created_at}</Moment>
+                <Link to={'/tweets/' + data._id} className="button btn-details">
+                    details
+                </Link>
+                <form onSubmit={this._handleSubmit} className="button btn-delete">
+                    <input type="submit" value="delete" />
                 </form>
             </div>
         );

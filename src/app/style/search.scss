@@ -9,6 +9,7 @@ $input-line-height: 70px;
 
 .input-highlight {
     font-size: $input-font-size;
+    font-family: 'Work Sans', sans-serif;
     user-select: none;
     line-height: $input-line-height;
     border-top: 3px solid white;
@@ -29,6 +30,7 @@ $input-line-height: 70px;
     border-radius: 0;
     line-height: $input-line-height;
     background-color: transparent;
+    font-family: 'Work Sans', sans-serif;
     color: white;
     font-size: $input-font-size;
     border: none;

@@ -20,7 +20,7 @@ class Search extends React.Component {
     render() {
         const { value } = this.state;
         return (
-            <div className="container">
+            <div className="form-container">
                 <form onSubmit={this._handleSubmit}>
                     <div className="input-wrapper">
                         <input
@@ -100,7 +100,12 @@ class Search extends React.Component {
                         <br />
                     </div>
                     <div className="button-wrapper">
-                        <input type="submit" value="Submit" className="button btn-submit" />
+                        <input
+                            type="submit"
+                            disabled={!this.state.value}
+                            value="Submit"
+                            className="button btn-submit"
+                        />
                     </div>
                 </form>
                 <Result data={this.state.data} />

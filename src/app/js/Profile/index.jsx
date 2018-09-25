@@ -9,10 +9,9 @@ class Profile extends Component {
 
         return (
             <div className="container">
-                {this.props.user._id}
+                {/* {this.props.user._id}
                 <br />
-                {this.props.user.email}
-                <Link to={'/search'}>SERCH AGAIN</Link>
+                {this.props.user.email} */}
                 <Details />
             </div>
         );
