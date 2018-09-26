@@ -12,10 +12,10 @@ class DoughnutChart extends Component {
                 datasets: [
                     {
                         data: [
-                            this.props.data.positiveTweets,
-                            this.props.data.negativeTweets,
-                            this.props.data.neutralTweets,
-                            this.props.data.mixedTweets
+                            this.props.data.positiveTweets * 4,
+                            this.props.data.negativeTweets * 4,
+                            this.props.data.neutralTweets * 4,
+                            this.props.data.mixedTweets * 4
                         ],
 
                         backgroundColor: ['#ECEDF1', '#717686', '#C7CBD7', '#A3A9BD'],
@@ -35,7 +35,20 @@ class DoughnutChart extends Component {
                     width={1000}
                     height={500}
                     options={{
-                        maintainAspectRatio: false
+                        maintainAspectRatio: false,
+                        plugins: {
+                            datalabels: {
+                                display: true,
+                                color: 'black',
+                                anchor: 'end',
+                                fontFamily: "'Work Sans', sans-serif",
+                                borderWidth: 2,
+                                borderColor: '#000',
+                                borderRadius: 50,
+                                backgroundColor: '#fff',
+                                padding: 6
+                            }
+                        }
                     }}
                 />
             </div>

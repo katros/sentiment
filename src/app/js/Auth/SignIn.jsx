@@ -1,10 +1,10 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SignIn extends React.Component {
     componentDidMount() {
-        this.props.handleInputChange('email', '')
-        this.props.handleInputChange('password', '')
+        this.props.handleInputChange('email', '');
+        this.props.handleInputChange('password', '');
     }
 
     render() {
@@ -40,8 +40,8 @@ class SignIn extends React.Component {
                     Don't have an account yet? Sign up instead!
                 </Link>
             </div>
-        )
+        );
     }
 }
 
-export default SignIn
+export default SignIn;

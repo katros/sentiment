@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
 import api from './utils/api';
+import Icons from '../assets/images/sprite.svg';
 
 class Card extends Component {
     constructor(props) {
@@ -12,12 +13,12 @@ class Card extends Component {
             error: ''
         };
 
-        this._handleSubmit = this._handleSubmit.bind(this);
+        this._handleSubmit = this._handleDelete.bind(this);
     }
 
     render() {
         const data = this.props.tweet;
-        console.log(data);
+        // console.log(data);
         return (
             <div className="card">
                 <p className="txt-bolder"> query: </p>
@@ -54,19 +55,22 @@ class Card extends Component {
 
                 <p className="txt-bolder">date:</p>
                 <Moment format="DD/MM/YYYY, HH:mm">{data.created_at}</Moment>
-                <Link to={'/tweets/' + data._id} className="button btn-details">
-                    details
+                <Link to={'/tweets/' + data._id}>
+                    <svg className="icon__edit">
+                        <use xlinkHref={`${Icons}#view-details`} />
+                    </svg>
                 </Link>
-                <form onSubmit={this._handleSubmit} className="button btn-delete">
-                    <input type="submit" value="delete" />
-                </form>
+
+                <div onClick={() => this._handleDelete(event)}>
+                    <svg className="icon__edit">
+                        <use xlinkHref={`${Icons}#trash`} />
+                    </svg>
+                </div>
             </div>
         );
     }
 
-    _handleSubmit(event) {
-        event.preventDefault();
-
+    _handleDelete(event) {
         api.del('/api/search/' + this.state.id)
             .then(data => {
                 this.props.getAllCards();

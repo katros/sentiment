@@ -1,3 +1,4 @@
+import scrollToComponent from 'react-scroll-to-component';
 import React from 'react';
 import api from './utils/api';
 import Result from './Result';
@@ -5,12 +6,14 @@ import Result from './Result';
 class Search extends React.Component {
     constructor(props) {
         super(props);
+        this.myRef = React.createRef();
 
         this.state = {
             value: '',
             error: '',
             searchType: 'recent',
-            data: null
+            data: null,
+            loading: false
         };
 
         this._handleInputChange = this._handleInputChange.bind(this);
@@ -108,7 +111,7 @@ class Search extends React.Component {
                         />
                     </div>
                 </form>
-                <Result data={this.state.data} />
+                <Result data={this.state.data} loading={this.state.loading} ref={this.myRef} />
             </div>
         );
     }
@@ -122,10 +125,24 @@ class Search extends React.Component {
     _handleSubmit(event) {
         event.preventDefault();
 
+        this.setState(
+            {
+                loading: true
+            },
+            () => {
+                scrollToComponent(this.myRef.current, {
+                    offset: 0,
+                    align: 'top',
+                    duration: 1000
+                });
+            }
+        );
+
         api.post('/api/search', { query: this.state.value, searchType: this.state.searchType })
             .then(data => {
                 this.setState({
-                    data: data
+                    data: data,
+                    loading: false
                 });
             })
             .catch(err => {

@@ -25,35 +25,6 @@
     margin: 30px 0 80px 0;
 }
 
-.btn-delete {
-    background-color: red;
-    border: none;
-    margin: 0 5px;
-    padding: 3px 10px;
-    font-weight: 400;
-    font-size: 11px;
-
-    input {
-        color: $text-color;
-        padding: 0;
-        background: none;
-        border: none;
-        font-family: 'Work Sans', sans-serif;
-        outline: none;
-        text-align: center;
-    }
-}
-
-.btn-details {
-    background-color: red;
-    padding: 3px 10px;
-    border: none;
-    margin-left: 10px;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 11px;
-}
-
 .button-wrapper {
     display: flex;
     justify-content: center;
@@ -164,4 +135,12 @@
 
 .txt-bolder {
     font-weight: 400;
+}
+
+.icon {
+    &__edit {
+        width: 20px;
+        height: 20px;
+        fill: $text-color;
+    }
 }
