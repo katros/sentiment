@@ -22,11 +22,10 @@ class Home extends Component {
     componentDidMount() {
         const { strings } = this.props;
         const options = {
-            strings: ['#brand', 'word', '@nickname'],
+            strings: ['#brand', 'mappiness', '@nickname'],
             typeSpeed: 200,
-            backSpeed: 100,
-            loop: true,
-            fadeOut: true
+            backSpeed: 10,
+            loop: true
         };
         this.typed = new Typed(this.el, options);
     }

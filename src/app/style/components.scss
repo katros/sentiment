@@ -167,5 +167,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 75vh;
+    height: 74vh;
+}
+
+.search-result {
+    display: flex;
+    align-items: center;
 }

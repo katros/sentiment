@@ -2,6 +2,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import React from 'react';
 import api from './utils/api';
 import Result from './Result';
+import { Redirect } from 'react-router-dom';
 
 class Search extends React.Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class Search extends React.Component {
     }
 
     render() {
+        if (!this.props.user) return <Redirect to="/auth/sign-in" />;
         const { value } = this.state;
         return (
             <div className="form-container">

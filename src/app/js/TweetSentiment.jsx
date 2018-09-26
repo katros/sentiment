@@ -3,6 +3,7 @@ import api from './utils/api';
 import Tweet from './Tweet';
 import { Link } from 'react-router-dom';
 import Icons from '../assets/images/sprite.svg';
+import { Redirect } from 'react-router-dom';
 
 class TweetSentiment extends Component {
     constructor(props) {
@@ -33,12 +34,13 @@ class TweetSentiment extends Component {
     }
 
     render() {
+        if (!this.props.user) return <Redirect to="/auth/sign-in" />;
         const mappedSentiment = this.state.tweets.map(el => <Tweet tweetDetails={el} key={el._id} />);
 
         return (
             <div className="container">
                 <Link to={'/profile'}>
-                <svg className="icon__edit arrow">
+                    <svg className="icon__edit arrow">
                         <use xlinkHref={`${Icons}#left-arrow`} />
                     </svg>
                 </Link>

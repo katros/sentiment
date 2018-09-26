@@ -5,28 +5,24 @@ import DoughnutChart from './DoughnutChart';
 class Result extends Component {
     render() {
         const data = this.props.data;
+        let amount;
+
         if (!data && !this.props.loading) return null;
 
-        if (this.props.loading) return <div style={{ minHeight: '100vh' }} className="loading">
-            {/* <div className="spinner-block">
-                <div className="spinner spinner-circle"></div>
-            </div> */}
+        if (this.props.loading)
+            return (
+                <div style={{ minHeight: '100vh' }} className="loading">
+                    <div className="spinner-eff spinner-eff-1">
+                        <div className="bar bar-top" />
+                        <div className="bar bar-right" />
+                        <div className="bar bar-bottom" />
+                        <div className="bar bar-left" />
+                    </div>
+                </div>
+            );
 
-
-
-      
-      <div className="spinner-eff spinner-eff-1">
-        <div className="bar bar-top"></div>
-        <div className="bar bar-right"></div>
-        <div className="bar bar-bottom"></div>
-        <div className="bar bar-left"></div>
-      </div>
-      
- 
-
-
-
-        </div>;
+        if (data)
+            amount = data.positiveTweets + data.negativeTweets + data.neutralTweets + data.mixedTweets;
 
         return (
             <div className="result-container">
@@ -34,34 +30,34 @@ class Result extends Component {
                 <DoughnutChart data={data} key={data._id} />
                 <h3>The overal sentiment about your query is {data.sentiment}.</h3>
                 <div className="search-result">
-                    {data.searchType === 'popular' ? (
-                        <p>{Math.round((data.positiveTweets * 100) / 15)}</p>
+                    {((data.positiveTweets * 100) / amount).toFixed(2) === '0.00' ? (
+                        <p>0</p>
                     ) : (
-                        <p>{data.positiveTweets * 4}</p>
+                        ((data.positiveTweets * 100) / amount).toFixed(2)
                     )}
                     <p>% of tweets were classified as positive.</p>
                 </div>
                 <div className="search-result">
-                    {data.searchType === 'popular' ? (
-                        <p>{Math.round((data.negativeTweets * 100) / 15)}</p>
+                    {((data.negativeTweets * 100) / amount).toFixed(2) === '0.00' ? (
+                        <p>0</p>
                     ) : (
-                        <p>{data.negativeTweets * 4}</p>
+                        ((data.negativeTweets * 100) / amount).toFixed(2)
                     )}
                     <p>% of tweets were classified as negative.</p>
                 </div>
                 <div className="search-result">
-                    {data.searchType === 'popular' ? (
-                        <p>{Math.round((data.neutralTweets * 100) / 15)}</p>
+                    {((data.neutralTweets * 100) / amount).toFixed(2) === '0.00' ? (
+                        <p>0</p>
                     ) : (
-                        <p>{data.neutralTweets * 4}</p>
+                        ((data.neutralTweets * 100) / amount).toFixed(2)
                     )}
                     <p>% of tweets were classified as neutral.</p>
                 </div>
                 <div className="search-result">
-                    {data.searchType === 'popular' ? (
-                        <p>{Math.round((data.mixedTweets * 100) / 15)}</p>
+                    {((data.mixedTweets * 100) / amount).toFixed(2) === '0.00' ? (
+                        <p>0</p>
                     ) : (
-                        <p>{data.mixedTweets * 4}</p>
+                        ((data.mixedTweets * 100) / amount).toFixed(2)
                     )}
                     <p>% of tweets were classified as mixed.</p>
                 </div>

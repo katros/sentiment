@@ -8,25 +8,23 @@ class DoughnutChart extends Component {
         window.sentiment = this.props.data.sentiment.toUpperCase();
         text();
 
-        // const stats = this.props.data;
-        // const data = [];
-
-        //     (stats.sentiment !== "popular") ? data.push(stats.positiveTweets*4) : data.push((stats.positiveTweets*100)/15)
-        //     (stats.sentiment !== "popular") ? data.push(stats.negativeTweets*4) : data.push((stats.negativeTweets*100)/15)
-        //     (stats.sentiment !== "popular") ? data.push(stats.neutralTweets*4) : data.push((stats.neutralTweets*100)/15)
-        //     (stats.sentiment !== "popular") ? data.push(stats.mixedTweets*4) : data.push((stats.mixedTweets*100)/15)
-       
+        const stats = this.props.data;
+        const amount =
+            stats.positiveTweets + stats.negativeTweets + stats.neutralTweets + stats.mixedTweets;
+        let multiplyFactor = 100 / amount;
 
         this.state = {
             chartData: {
                 datasets: [
                     {
-                        data: [ this.props.data.positiveTweets * 4,
-                                this.props.data.negativeTweets * 4,
-                                this.props.data.neutralTweets * 4,
-                                this.props.data.mixedTweets * 4],
-                                
-                        backgroundColor: ['#ECEDF1', '#717686', '#C7CBD7', '#A3A9BD'],
+                        data: [
+                            (stats.positiveTweets * multiplyFactor).toFixed(2),
+                            (stats.negativeTweets * multiplyFactor).toFixed(2),
+                            (stats.neutralTweets * multiplyFactor).toFixed(2),
+                            (stats.mixedTweets * multiplyFactor).toFixed(2)
+                        ],
+
+                        backgroundColor: ['#6DA4C8', '#175D8C', '#448AB9', '#1B71AA'],
                         borderColor: ['#000', '#000', '#000', '#000']
                     }
                 ],
@@ -46,7 +44,9 @@ class DoughnutChart extends Component {
                         maintainAspectRatio: false,
                         plugins: {
                             datalabels: {
-                                display: true,
+                                display: function(context) {
+                                    return context.dataset.data[context.dataIndex] !== '0.00';
+                                },
                                 color: 'black',
                                 anchor: 'end',
                                 fontFamily: "'Work Sans', sans-serif",
@@ -54,7 +54,10 @@ class DoughnutChart extends Component {
                                 borderColor: '#000',
                                 borderRadius: 50,
                                 backgroundColor: '#fff',
-                                padding: 6
+                                padding: 6,
+                                formatter: function(value) {
+                                    return value + '%';
+                                }
                             }
                         }
                     }}

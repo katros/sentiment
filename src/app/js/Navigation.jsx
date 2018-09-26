@@ -6,15 +6,13 @@ const Navigation = props => {
         <div className="navigation">
             <div className="container nav-content">
                 <div>
-                    <Link className="link nav-link logo" to="/search">
+                    <Link className="link nav-link logo" to="/">
                         sentiment
                     </Link>
+                </div>
+                <div>
                     {props.user && (
                         <span>
-                            &nbsp; &nbsp; &nbsp;
-                            <Link className="link nav-link" to="/profile">
-                                your profile
-                            </Link>
                             &nbsp; &nbsp; &nbsp;
                             <Link className="link nav-link" to="/search">
                                 search
@@ -23,14 +21,17 @@ const Navigation = props => {
                             <Link className="link nav-link" to="/how-does-it-work">
                                 how does it work?
                             </Link>
+                            &nbsp; &nbsp; &nbsp;
+                            <Link className="link nav-link" to="/profile">
+                                your profile
+                            </Link>
+                            &nbsp; &nbsp; &nbsp;
                         </span>
                     )}
-                </div>
-                <div>
                     {props.user ? (
                         <span>
                             <Link className="link nav-link" to="/auth/logout">
-                                Logout
+                                logout
                             </Link>
                         </span>
                     ) : (
@@ -40,11 +41,11 @@ const Navigation = props => {
                             </Link>
                             &nbsp; &nbsp; &nbsp;
                             <Link className="link nav-link" to="/auth/sign-in">
-                                Sign in
+                                sign in
                             </Link>
                             &nbsp; &nbsp; &nbsp;
                             <Link className="link nav-link" to="/auth/sign-up">
-                                Sign up
+                                sign up
                             </Link>
                         </span>
                     )}

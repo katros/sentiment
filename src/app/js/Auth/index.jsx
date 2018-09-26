@@ -77,7 +77,7 @@ class Auth extends Component {
             .then(data => {
                 localStorage.setItem('identity', data.token);
                 this.props.setUser();
-                this.props.history.push('/');
+                this.props.history.push('/search');
             })
             .catch(err => {
                 this.setState({
