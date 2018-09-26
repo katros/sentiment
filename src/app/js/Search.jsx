@@ -133,7 +133,7 @@ class Search extends React.Component {
                 scrollToComponent(this.myRef.current, {
                     offset: 0,
                     align: 'top',
-                    duration: 1000
+                    duration: 800
                 });
             }
         );

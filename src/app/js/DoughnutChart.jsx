@@ -7,17 +7,25 @@ class DoughnutChart extends Component {
         super(props);
         window.sentiment = this.props.data.sentiment.toUpperCase();
         text();
+
+        // const stats = this.props.data;
+        // const data = [];
+
+        //     (stats.sentiment !== "popular") ? data.push(stats.positiveTweets*4) : data.push((stats.positiveTweets*100)/15)
+        //     (stats.sentiment !== "popular") ? data.push(stats.negativeTweets*4) : data.push((stats.negativeTweets*100)/15)
+        //     (stats.sentiment !== "popular") ? data.push(stats.neutralTweets*4) : data.push((stats.neutralTweets*100)/15)
+        //     (stats.sentiment !== "popular") ? data.push(stats.mixedTweets*4) : data.push((stats.mixedTweets*100)/15)
+       
+
         this.state = {
             chartData: {
                 datasets: [
                     {
-                        data: [
-                            this.props.data.positiveTweets * 4,
-                            this.props.data.negativeTweets * 4,
-                            this.props.data.neutralTweets * 4,
-                            this.props.data.mixedTweets * 4
-                        ],
-
+                        data: [ this.props.data.positiveTweets * 4,
+                                this.props.data.negativeTweets * 4,
+                                this.props.data.neutralTweets * 4,
+                                this.props.data.mixedTweets * 4],
+                                
                         backgroundColor: ['#ECEDF1', '#717686', '#C7CBD7', '#A3A9BD'],
                         borderColor: ['#000', '#000', '#000', '#000']
                     }
