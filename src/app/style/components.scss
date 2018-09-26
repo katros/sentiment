@@ -94,7 +94,7 @@
     display: flex;
     align-items: center;
     p {
-        padding-right: 20px;
+        padding-right: 10px;
     }
 }
 
@@ -137,10 +137,23 @@
     font-weight: 400;
 }
 
+.txt-padding {
+    padding-left:20px;
+}
+
 .icon {
     &__edit {
         width: 20px;
         height: 20px;
         fill: $text-color;
+        cursor: pointer;
+
+        &:hover {
+            fill: #86A9CC;
+        }
     }
+    }
+
+.arrow {
+    margin-bottom: -15px;
 }

@@ -88,20 +88,6 @@ router.post('/', (req, res) => {
         });
 });
 
-////////////////////////////////////////////////////////////////////////////
-//other routes
-///////////////////////////////////////////////////////////////////////////
-
-//getting search result by its id
-
-// router.get('/:id', (req, res) => {
-//     const id = req.params._id;
-
-//     Search.findOne({ id }).then(result => {
-//         res.send(result);
-//     });
-// });
-
 //getting all search results of a user
 
 router.get('/', (req, res) => {
@@ -119,7 +105,6 @@ router.get('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     Search.findByIdAndRemove(req.params.id).then(result => {
         Tweets.deleteOne({ searchId: req.params.id }).then(result => {
-            console.log(result);
             res.send(result);
         });
     });

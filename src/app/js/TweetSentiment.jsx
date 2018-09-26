@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import api from './utils/api';
 import Tweet from './Tweet';
 import { Link } from 'react-router-dom';
+import Icons from '../assets/images/sprite.svg';
 
 class TweetSentiment extends Component {
     constructor(props) {
@@ -36,7 +37,11 @@ class TweetSentiment extends Component {
 
         return (
             <div className="container">
-                <Link to={'/profile'}>GO BACK</Link>
+                <Link to={'/profile'}>
+                <svg className="icon__edit arrow">
+                        <use xlinkHref={`${Icons}#left-arrow`} />
+                    </svg>
+                </Link>
                 <div>{mappedSentiment}</div>
             </div>
         );
