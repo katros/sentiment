@@ -39,7 +39,8 @@
         "react-router": "^4.3.1",
         "react-router-dom": "^4.3.1",
         "react-scroll-to-component": "^1.0.2",
-        "twit": "^2.2.11"
+        "twit": "^2.2.11",
+        "typed.js": "^2.0.9"
     },
     "devDependencies": {
         "babel-core": "^6.26.3",

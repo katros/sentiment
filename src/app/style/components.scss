@@ -138,7 +138,7 @@
 }
 
 .txt-padding {
-    padding-left:20px;
+    padding-left: 20px;
 }
 
 .icon {
@@ -149,11 +149,23 @@
         cursor: pointer;
 
         &:hover {
-            fill: #86A9CC;
+            fill: #86a9cc;
         }
     }
-    }
+}
 
 .arrow {
     margin-bottom: -15px;
+}
+
+.subtitle {
+    font-weight: 200;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75vh;
 }
