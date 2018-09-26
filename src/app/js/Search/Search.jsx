@@ -1,6 +1,6 @@
 import scrollToComponent from 'react-scroll-to-component';
 import React from 'react';
-import api from './utils/api';
+import api from '../utils/api';
 import Result from './Result';
 import { Redirect } from 'react-router-dom';
 

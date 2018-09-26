@@ -1,0 +1,154 @@
+$textDur: 1500ms;
+$waveDur: 3000ms;
+
+@keyframes text {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    30% {
+        transform: translate3d(0, 0, 0);
+    }
+    45% {
+        transform: translate3d(0, -4rem, 0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes text-w {
+    0% {
+        transform: translate3d(0, -4rem, 0);
+    }
+    38% {
+        transform: translate3d(0, -4rem, 0);
+    }
+    69% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(0, -4rem, 0);
+    }
+}
+
+@keyframes coast {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    23% {
+        transform: translate3d(0, 0, 0);
+    }
+    50% {
+        transform: translate3d(11rem, 0, 0);
+    }
+    100% {
+        transform: translate3d(11rem, 0, 0);
+    }
+}
+
+@keyframes wave {
+    0% {
+        transform: scale(0);
+        width: 2.2rem;
+    }
+    10% {
+        transform: scale(1);
+    }
+    23% {
+        width: 2.2rem;
+    }
+    32% {
+        width: 6.1rem;
+    }
+    42% {
+        width: 5rem;
+        transform: rotateY(0deg) scale(1, 1);
+    }
+    51% {
+        transform: rotateY(90deg) scale(0.6, 0.2);
+    }
+    52% {
+        transform: rotateY(90deg) scale(0);
+    }
+    100% {
+        transform: rotateY(90deg) scale(0);
+    }
+}
+
+.container-wave {
+    position: absolute;
+    width: 17rem;
+    height: 10rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    p {
+        font-size: 0.75em;
+    }
+
+    .text {
+        color: #fff;
+        font-size: 8rem;
+        font-weight: 700;
+        display: inline-block;
+        bottom: 0;
+        animation: text $textDur ease-in infinite;
+        transform: translatez(0);
+        &-a {
+            left: 0rem;
+            transform: translate3d(0, -4rem, 0);
+            animation: text-w $textDur ease-in infinite;
+        }
+        &-b {
+            left: 5.4rem;
+            animation-delay: 150ms;
+        }
+        &-c {
+            left: 9.6rem;
+            animation-delay: 230ms;
+        }
+    }
+}
+
+.coast {
+    // wave: translate-x
+    position: absolute;
+    left: 1.3rem;
+    bottom: 1.7rem;
+    width: 6.2rem;
+    height: 2.2rem;
+    display: inline-block;
+    animation: coast $waveDur linear infinite;
+    transform: translateZ(0);
+}
+
+.wave-rel-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 3rem;
+    perspective-origin: 0%, 50%;
+}
+
+.wave {
+    // wave: width && scale && rotate
+    position: absolute;
+    width: 6.2rem;
+    height: 2.2rem;
+    border-radius: 1.1rem;
+    background: radial-gradient(
+        ellipse at center,
+        rgb(134, 169, 204) 0%,
+        rgba(134, 169, 204, 1) 73%,
+        rgba(134, 169, 204, 1) 100%
+    );
+    display: inline-block;
+    animation: wave $waveDur linear infinite;
+    will-change: width;
+    transform: translateZ(0) scale(0);
+}
+
+.delay {
+    animation-delay: $waveDur / 2;
+}

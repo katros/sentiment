@@ -39,8 +39,14 @@ class DoughnutChart extends Component {
                 <Doughnut
                     data={this.state.chartData}
                     width={1000}
-                    height={500}
+                    height={600}
                     options={{
+                        layout: {
+                            // padding: {
+                            //     top: 50,
+                            //     bottom: 50
+                            // }
+                        },
                         maintainAspectRatio: false,
                         plugins: {
                             datalabels: {

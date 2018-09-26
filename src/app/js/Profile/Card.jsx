@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Moment from 'react-moment';
 import { Link } from 'react-router-dom';
-import api from './utils/api';
+import api from '../utils/api';
 import Icons from '../assets/images/sprite.svg';
 
 class Card extends Component {

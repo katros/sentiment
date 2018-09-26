@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import api from './utils/api';
+import api from '../utils/api';
 import Tweet from './Tweet';
 import { Link } from 'react-router-dom';
 import Icons from '../assets/images/sprite.svg';

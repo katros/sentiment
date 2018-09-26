@@ -12,7 +12,7 @@ const Tweet = ({ tweetDetails }) => {
             <div className="tweet-details">
                 <p className="txt-bolder"> sentiment: </p>
                 {tweetDetails.sentiment}
-                <p className="txt-bolder txt-padding">certainity: </p>
+                <p className="txt-bolder txt-padding">confidence: </p>
                 <p>positive: {(tweetDetails.positive * 100).toFixed(2)}%</p>
                 <p>negative: {(tweetDetails.negative * 100).toFixed(2)}%</p>
                 <p>neutral: {(tweetDetails.neutral * 100).toFixed(2)}%</p>
