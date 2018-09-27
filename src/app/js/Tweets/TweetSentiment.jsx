@@ -18,7 +18,6 @@ class TweetSentiment extends Component {
     componentDidMount() {
         api.get('/api/search/tweets/' + this.props.id).then(
             result => {
-                console.log('result=', result);
                 this.setState({
                     isLoaded: true,
                     tweets: result

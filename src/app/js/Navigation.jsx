@@ -10,16 +10,12 @@ const Navigation = props => {
                         sentiment
                     </Link>
                 </div>
-                <div>
+                <div className="nav-wrap">
                     {props.user && (
                         <span>
                             &nbsp; &nbsp; &nbsp;
                             <Link className="link nav-link" to="/search">
                                 search
-                            </Link>
-                            &nbsp; &nbsp; &nbsp;
-                            <Link className="link nav-link" to="/how-does-it-work">
-                                how does it work?
                             </Link>
                             &nbsp; &nbsp; &nbsp;
                             <Link className="link nav-link" to="/profile">
@@ -37,7 +33,7 @@ const Navigation = props => {
                     ) : (
                         <span>
                             <Link className="link nav-link" to="/about">
-                                what is it about?
+                                about
                             </Link>
                             &nbsp; &nbsp; &nbsp;
                             <Link className="link nav-link" to="/auth/sign-in">

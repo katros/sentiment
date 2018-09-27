@@ -19,8 +19,14 @@ class Card extends Component {
     render() {
         const data = this.props.tweet;
         let amount = data.positiveTweets + data.negativeTweets + data.neutralTweets + data.mixedTweets;
+        let color = '';
+        if (data.sentiment === 'positive') color = '#E19C9B';
+        else if (data.sentiment === 'negative') color = '#455B71';
+        else if (data.sentiment === 'neutral') color = '#A4BBC8';
+        else color = '#FCD5BB';
+
         return (
-            <div className="card">
+            <div className="card" style={{ borderColor: color }}>
                 <p className="txt-bolder"> query: </p>
                 {data.query}
                 <p className="txt-bolder">search type: </p>

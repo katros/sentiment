@@ -11,7 +11,30 @@ const Tweet = ({ tweetDetails }) => {
 
             <div className="tweet-details">
                 <p className="txt-bolder"> sentiment: </p>
-                {tweetDetails.sentiment}
+                {tweetDetails.sentiment === 'NEUTRAL' ? (
+                    <p style={{ color: '#A4BBC8' }} className="txt-bolder">
+                        {tweetDetails.sentiment}
+                    </p>
+                ) : null}
+
+                {tweetDetails.sentiment === 'POSITIVE' ? (
+                    <p style={{ color: '#E19C9B' }} className="txt-bolder">
+                        {tweetDetails.sentiment}
+                    </p>
+                ) : null}
+
+                {tweetDetails.sentiment === 'NEGATIVE' ? (
+                    <p style={{ color: '#455B71' }} className="txt-bolder">
+                        {tweetDetails.sentiment}
+                    </p>
+                ) : null}
+
+                {tweetDetails.sentiment === 'MIXED' ? (
+                    <p style={{ color: '#FCD5BB' }} className="txt-bolder">
+                        {tweetDetails.sentiment}
+                    </p>
+                ) : null}
+
                 <p className="txt-bolder txt-padding">confidence: </p>
                 <p>positive: {(tweetDetails.positive * 100).toFixed(2)}%</p>
                 <p>negative: {(tweetDetails.negative * 100).toFixed(2)}%</p>

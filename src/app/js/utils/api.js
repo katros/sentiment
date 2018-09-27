@@ -21,9 +21,6 @@ const api = {
 
     post: (endpoint, body) => {
         return new Promise((resolve, reject) => {
-            //getting token - to remove later
-            console.log(localStorage.getItem('identity'));
-
             axios
                 .post(endpoint, body, {
                     headers: { Authorization: `Bearer ${localStorage.getItem('identity')}` }
