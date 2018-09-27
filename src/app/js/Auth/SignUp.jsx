@@ -44,7 +44,7 @@ class SignUp extends React.Component {
                 <p>{this.props.error}</p>
                 <div className="separator" />
                 <Link className="link" to="/auth/sign-in">
-                    Do you have an account already? Sign in instead!
+                    Have an account already? Sign in.
                 </Link>
             </div>
         );
