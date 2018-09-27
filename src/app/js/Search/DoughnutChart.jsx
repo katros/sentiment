@@ -51,9 +51,9 @@ class DoughnutChart extends Component {
                                 anchor: 'end',
                                 fontFamily: "'Work Sans', sans-serif",
                                 borderWidth: 2,
-                                borderColor: '#fff',
+                                borderColor: '#000',
                                 borderRadius: 5,
-                                backgroundColor: '#fff',
+                                backgroundColor: ['#E19C9B', '#455B71', '#A4BBC8', '#FCD5BB'],
                                 padding: 3,
                                 formatter: function(value) {
                                     return value + '%';
@@ -70,7 +70,7 @@ class DoughnutChart extends Component {
 function text() {
     const originalDoughnutDraw = Chart.controllers.doughnut.prototype.draw;
     Chart.defaults.global.animation.easing = 'easeOutBounce';
-    Chart.defaults.global.legend.labels.boxWidth = 80;
+    Chart.defaults.global.legend.labels.boxWidth = 10;
     Chart.defaults.global.legend.labels.fontColor = '#fff';
     Chart.defaults.global.legend.labels.fontFamily = "'Work Sans', sans-serif";
     Chart.defaults.global.animation.duration = 2000;

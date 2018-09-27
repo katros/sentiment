@@ -32,18 +32,22 @@ class Card extends Component {
                 <p>{Math.round((data.negativeTweets * 100) / amount)}% negative,</p>
                 <p>{Math.round((data.neutralTweets * 100) / amount)}% neutral,</p>
                 <p>{Math.round((data.mixedTweets * 100) / amount)}% mixed</p>
-                <p className="txt-bolder">date:</p>
-                <Moment format="DD/MM/YYYY, HH:mm">{data.created_at}</Moment>
-                <Link to={'/tweets/' + data._id}>
-                    <svg className="icon__edit">
-                        <use xlinkHref={`${Icons}#view-details`} />
-                    </svg>
-                </Link>
 
-                <div onClick={() => this._handleDelete(event)}>
-                    <svg className="icon__edit">
-                        <use xlinkHref={`${Icons}#trash`} />
-                    </svg>
+                <div className="icon-wrapper">
+                    <p className="txt-bolder">date:</p>
+                    <Moment format="DD/MM/YYYY, HH:mm">{data.created_at}</Moment>
+
+                    <Link to={'/tweets/' + data._id}>
+                        <svg className="icon__edit">
+                            <use xlinkHref={`${Icons}#view-details`} />
+                        </svg>
+                    </Link>
+
+                    <div onClick={() => this._handleDelete(event)}>
+                        <svg className="icon__edit">
+                            <use xlinkHref={`${Icons}#trash`} />
+                        </svg>
+                    </div>
                 </div>
             </div>
         );

@@ -1,0 +1,117 @@
+@media (max-width: 1023px) {
+    .card,
+    .tweet-card {
+        flex-wrap: wrap;
+    }
+
+    .icon-wrapper {
+        p {
+            margin-right: 10px;
+        }
+
+        svg {
+            margin-left: 8px;
+        }
+    }
+}
+
+@media (max-width: 766px) {
+    .subtitle {
+        font-size: 1.5em;
+    }
+
+    .searchInput {
+        padding-left: 20px;
+    }
+
+    .input-wrapper {
+        display: flex;
+        width: 80%;
+    }
+
+    .result-container {
+        h3 {
+            font-size: 1em;
+        }
+
+        p {
+            font-size: 0.9em;
+        }
+
+        h4 {
+            font-size: 0.8em;
+        }
+    }
+
+    canvas {
+        height: 400px !important;
+        width: 800px !important;
+    }
+
+    // add hamburger
+}
+
+@media (max-width: 480px) {
+    .type-wrap span {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .cntr {
+        font-size: 11px;
+        margin: 0;
+    }
+
+    canvas {
+        height: 300px !important;
+        width: 600px !important;
+    }
+
+    .card {
+        flex-direction: column;
+        margin: 20px auto;
+        width: 70vw;
+    }
+
+    .result-container {
+        h2 {
+            font-size: 1.3em;
+        }
+
+        h3 {
+            font-size: 0.75em;
+        }
+
+        h4 {
+            font-size: 0.7em;
+            margin-right: 10px;
+            margin-left: 10px;
+            text-align: center;
+        }
+
+        .search-result {
+            font-size: 0.7em;
+        }
+    }
+
+    .tweet-card {
+        padding: 15px;
+    }
+
+    .tweet-details {
+        flex-direction: column;
+        align-items: flex-start;
+
+        .txt-bolder {
+            margin: 7px 0;
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+}

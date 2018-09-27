@@ -1,6 +1,6 @@
 $primary-color: #000;
 $secondary-color: #ff686b;
-$text-color: #fff;
+$text-color: #eef0f2;
 $grey: rgb(200, 200, 200);
 // $yellow: #fbc91b;
 $yellow: #fbd244;
@@ -15,3 +15,4 @@ $yellow: #fbd244;
 @import './button.scss';
 @import './notFound.scss';
 @import './signForm.scss';
+@import './queries.scss';
