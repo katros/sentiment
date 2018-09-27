@@ -24,7 +24,7 @@ class DoughnutChart extends Component {
                             (stats.mixedTweets * multiplyFactor).toFixed(2)
                         ],
 
-                        backgroundColor: ['#6DA4C8', '#175D8C', '#448AB9', '#1B71AA'],
+                        backgroundColor: ['#E19C9B', '#455B71', '#A4BBC8', '#FCD5BB'],
                         borderColor: ['#000', '#000', '#000', '#000']
                     }
                 ],
@@ -39,14 +39,8 @@ class DoughnutChart extends Component {
                 <Doughnut
                     data={this.state.chartData}
                     width={1000}
-                    height={600}
+                    height={500}
                     options={{
-                        layout: {
-                            // padding: {
-                            //     top: 50,
-                            //     bottom: 50
-                            // }
-                        },
                         maintainAspectRatio: false,
                         plugins: {
                             datalabels: {
@@ -57,10 +51,10 @@ class DoughnutChart extends Component {
                                 anchor: 'end',
                                 fontFamily: "'Work Sans', sans-serif",
                                 borderWidth: 2,
-                                borderColor: '#000',
-                                borderRadius: 50,
+                                borderColor: '#fff',
+                                borderRadius: 5,
                                 backgroundColor: '#fff',
-                                padding: 6,
+                                padding: 3,
                                 formatter: function(value) {
                                     return value + '%';
                                 }

@@ -9,7 +9,7 @@ class SignUp extends React.Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container sign-wrapper">
                 <h1 className="sign-title">SignUp</h1>
                 <input
                     type="email"
@@ -30,7 +30,6 @@ class SignUp extends React.Component {
                 <br />
                 <br />
                 <div className="portfolio-experiment" onClick={() => this.props.sign('up')}>
-                    {/* Sign Up */}
                     <a>
                         <span className="text">Sign Up</span>
                         <span className="line -right" />
@@ -43,9 +42,13 @@ class SignUp extends React.Component {
                 <br />
                 <p>{this.props.error}</p>
                 <div className="separator" />
-                <Link className="link" to="/auth/sign-in">
-                    Have an account already? Sign in.
-                </Link>
+
+                <div>
+                    <span>Have an account already? </span>
+                    <Link className="link" to="/auth/sign-in">
+                        Sign in.
+                    </Link>
+                </div>
             </div>
         );
     }

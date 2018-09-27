@@ -5,7 +5,7 @@
 }
 
 $spinner-dimensions: 50px; //width and height of spinner block
-$spinner-1-bg: #fbc91b; //spinner-1 background-color
+$spinner-1-bg: #fbd244; //spinner-1 background-color
 
 @mixin position-absolute($top: null, $left: null, $right: null, $bottom: null) {
     position: absolute;

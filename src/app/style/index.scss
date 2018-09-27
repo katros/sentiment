@@ -2,7 +2,8 @@ $primary-color: #000;
 $secondary-color: #ff686b;
 $text-color: #fff;
 $grey: rgb(200, 200, 200);
-$yellow: #fbc91b;
+// $yellow: #fbc91b;
+$yellow: #fbd244;
 
 @import './base.scss';
 @import './components.scss';
@@ -13,3 +14,4 @@ $yellow: #fbc91b;
 @import './textAnimation.scss';
 @import './button.scss';
 @import './notFound.scss';
+@import './signForm.scss';

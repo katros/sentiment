@@ -1,7 +1,8 @@
 .button {
     padding: 10px 15px;
     background-color: $yellow;
-    color: #fff;
+    color: #000;
+    font-weight: 600;
     transition: 250ms all ease-in-out;
     border: none;
     outline: none;
@@ -9,16 +10,16 @@
 
     &:hover {
         cursor: pointer;
-        background-color: lighten($yellow, 10%);
+        background-color: darken($yellow, 15%);
     }
 
-    &-secondary {
-        background-color: $secondary-color;
+    // &-secondary {
+    //     background-color: $secondary-color;
 
-        &:hover {
-            background-color: lighten($secondary-color, 8%);
-        }
-    }
+    //     &:hover {
+    //         background-color: lighten($secondary-color, 8%);
+    //     }
+    // }
 }
 
 .btn-submit {
@@ -30,27 +31,9 @@
     justify-content: center;
 }
 
-.input {
-    border-radius: 3px;
-    border: 1px solid $grey;
-    transition: 250ms all ease-in-out;
-    outline: none;
-    color: $primary-color;
-    padding: 5px 10px;
-    background-color: #fff;
-    font-size: 16px;
-    min-width: 250px;
-    max-width: 100%;
-
-    &:focus {
-        border-color: $primary-color;
-        color: $primary-color;
-    }
-}
-
 .separator {
     display: block;
-    width: 100%;
+    width: 60%;
     height: 1px;
     margin: 15px 0;
     background-color: $grey;
@@ -173,9 +156,4 @@
 .search-result {
     display: flex;
     align-items: center;
-}
-
-.sign-title {
-    font-weight: 400;
-    font-size: 1.5em;
 }
