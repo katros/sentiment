@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import Details from '../Details';
+import Details from './Details';
 import { Link } from 'react-router-dom';
 
 class Profile extends Component {

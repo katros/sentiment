@@ -6,12 +6,12 @@ import jwtDecode from 'jwt-decode';
 import Auth from './Auth';
 import Home from './Home';
 import Navigation from './Navigation';
-import Profile from './Profile';
+import Profile from './Profile/index';
 import NotFound from './NotFound';
-import Search from './Search';
+import Search from './Search/Search';
 import Instruction from './Instruction';
 import About from './About';
-import TweetSentiment from './TweetSentiment';
+import TweetSentiment from './Tweets/TweetSentiment';
 import api from './utils/api';
 
 class Application extends React.Component {
