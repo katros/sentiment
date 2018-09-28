@@ -48,7 +48,6 @@ class DoughnutChart extends Component {
                                     return context.dataset.data[context.dataIndex] !== '0.00';
                                 },
                                 color: 'black',
-                                anchor: 'end',
                                 fontFamily: "'Work Sans', sans-serif",
                                 borderWidth: 2,
                                 borderColor: '#000',
