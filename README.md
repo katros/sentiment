@@ -5,6 +5,8 @@ All search queries are stored in user's profile and detailed information about e
 
 ![Landing page](/src/app/assets/images/sentiment.png?raw=true)
 
+![Landing page](/src/app/assets/images/sentiment2.png?raw=true)
+
 ## Built With
 
 -   React.js
